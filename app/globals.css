@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  /* background-color: black; */
+}
+
+@layer components {
+  /* .menu-item {
+    /* hover:text-blue-900 hover:bg-white 
+    @apply flex-box sm:flex-col lg:flex-row p-2 md:mx-3 mx-1 text-gray-500 text-base font-normal cursor-pointer border-black rounded uppercase hover:text-black;
+  } */
+
+  .flex-box {
+    @apply flex items-center justify-center;
+  }
+  /* .home {
+    @apply bg-black;
+    /* @apply bg-[image:url('../assets/herowtext.png')] bg-cover bg-no-repeat;
+  } */
+}
+/* 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,4 +48,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
