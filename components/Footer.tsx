@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="px-5 py-5 flex-box flex-col bg-slate-800 scroll-smooth text-center absolute bottom-0 left-0 right-0">
+    <div className="px-5 py-5 flex-box flex-col bg-slate-800 scroll-smooth text-center md:absolute bottom-0 left-0 right-0">
       <div className="w-full pt-4 flex-box justify-around flex-col md:flex-row flex-end">
         {/* <Logo /> */}
         <div className="py-5 text-white text-base font-normal flex-box">

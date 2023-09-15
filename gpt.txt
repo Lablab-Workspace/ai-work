@@ -1,0 +1,76 @@
+ import { Board } from "@/typings";
+import formatTodosForAI from "./formatTodosForAI";
+
+const fetchSuggestion = async (board: Board) => {
+  try {
+    const todos = formatTodosForAI(board);
+    const res = await fetch("/api/generateSummary", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ todos }),
+    });
+
+    const GPTdata = await res.json();
+    const { suggestion } = GPTdata; // Update this line to access the correct field in the GPT data
+
+    return suggestion || "AI bot is summarizing your tasks for the day...";
+  } catch (error) {
+    console.error("Error fetching suggestion:", error);
+    return "AI bot is summarizing your tasks for the day..."; // Return a default message in case of error
+  }
+};
+
+export default fetchSuggestion;
+
+and here is my updated route.ts:
+import openai, { Configuration, OpenAIApi } from "openai";
+import { NextResponse } from "next/server";
+
+const configuration = new Configuration({
+  apiKey: process.env.OPEN_AI_KEY,
+});
+
+const openaiApi = new OpenAIApi(configuration);
+
+export async function POST(request: Request) {
+  try {
+    const requestData = await request.json();
+    const { todos } = requestData;
+
+    const response = await openaiApi.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      temperature: 0.8,
+      n: 1,
+      stream: false,
+      messages: [
+        {
+          role: "system",
+          content: `When responding, Welcome the user always as Mr. Bellion and say welcome to the Jello App! Limit the response to 200 characters`,
+        },
+        {
+          role: "user",
+          content: `Hi there, provide a summary of the following todos. Count how many todos are in each category such as To do, in progress, and done, then tell the user a short inspirational quote to inspire them to have a positive productive day! Here's the data: 
+            ${JSON.stringify(todos)}`,
+        },
+      ],
+    });
+
+    const { data } = response;
+    const suggestion = data.choices[0]?.message?.content || "";
+
+    return new Response(JSON.stringify({ suggestion }), {
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (error) {
+    console.error("Error fetching suggestion:", error);
+    return new Response(
+      JSON.stringify({ error: "Failed to fetch suggestion" }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  }
+}
