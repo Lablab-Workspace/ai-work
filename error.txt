@@ -1,0 +1,42 @@
+2023-09-16T15:25:49.747Z
+2023-09-16T15:25:49.747Z  ./node_modules/node-fetch/lib/index.js
+2023-09-16T15:25:49.748Z  Module not found: Can't resolve 'encoding' in '/vercel/path0/node_modules/node-fetch/lib'
+2023-09-16T15:25:49.748Z
+2023-09-16T15:25:49.748Z  Import trace for requested module:2023-09-16T15:25:49.748Z  ./node_modules/node-fetch/lib/index.js
+2023-09-16T15:25:49.748Z  ./node_modules/openai/_shims/fetch-node.mjs
+2023-09-16T15:25:49.749Z  ./node_modules/openai/core.mjs
+2023-09-16T15:25:49.749Z  ./node_modules/openai/index.mjs
+2023-09-16T15:25:49.749Z  ./openai.ts
+2023-09-16T15:25:49.749Z  ./app/api/generateSummary/route.ts2023-09-16T15:25:49.749Z
+2023-09-16T15:25:49.749Z  ./node_modules/node-fetch/lib/index.js
+2023-09-16T15:25:49.749Z  Module not found: Can't resolve 'encoding' in '/vercel/path0/node_modules/node-fetch/lib'
+2023-09-16T15:25:49.749Z
+2023-09-16T15:25:49.749Z  Import trace for requested module:2023-09-16T15:25:49.750Z  ./node_modules/node-fetch/lib/index.js
+2023-09-16T15:25:49.750Z  ./node_modules/cross-fetch/dist/node-ponyfill.js
+2023-09-16T15:25:49.750Z  ./node_modules/appwrite/dist/esm/sdk.js
+2023-09-16T15:25:49.750Z  ./appwrite.ts
+2023-09-16T15:25:49.750Z  ./store/BoardStore.ts
+2023-09-16T15:25:49.750Z  ./components/Modal.tsx
+2023-09-16T15:25:49.750Z
+2023-09-16T15:25:49.751Z  - info Linting and checking validity of types...
+2023-09-16T15:25:56.072Z  - info Collecting page data...
+2023-09-16T15:25:56.908Z  Error: The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'my apiKey' }).
+2023-09-16T15:25:56.908Z      at new OpenAI (/vercel/path0/.next/server/chunks/193.js:9904:19)
+2023-09-16T15:25:56.909Z      at 41737 (/vercel/path0/.next/server/app/api/generateSummary/route.js:133:23)
+2023-09-16T15:25:56.909Z      at __webpack_require__ (/vercel/path0/.next/server/webpack-runtime.js:25:43)
+2023-09-16T15:25:56.909Z      at __webpack_exec__ (/vercel/path0/.next/server/app/api/generateSummary/route.js:221:39)
+2023-09-16T15:25:56.909Z      at /vercel/path0/.next/server/app/api/generateSummary/route.js:222:74
+2023-09-16T15:25:56.909Z      at __webpack_require__.X (/vercel/path0/.next/server/webpack-runtime.js:138:21)
+2023-09-16T15:25:56.909Z      at /vercel/path0/.next/server/app/api/generateSummary/route.js:222:47
+2023-09-16T15:25:56.909Z      at Object.<anonymous> (/vercel/path0/.next/server/app/api/generateSummary/route.js:225:3)
+2023-09-16T15:25:56.910Z      at Module._compile (node:internal/modules/cjs/loader:1256:14)
+2023-09-16T15:25:56.910Z      at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+2023-09-16T15:25:56.912Z
+2023-09-16T15:25:56.913Z  > Build error occurred
+2023-09-16T15:25:56.917Z  Error: Failed to collect page data for /api/generateSummary
+2023-09-16T15:25:56.919Z      at /vercel/path0/node_modules/next/dist/build/utils.js:1158:15
+2023-09-16T15:25:56.920Z      at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+2023-09-16T15:25:56.920Z    type: 'Error'
+2023-09-16T15:25:56.920Z  }
+2023-09-16T15:25:56.983Z  Error: Command "npm run build" exited with 1
+2023-09-16T15:25:57.922Z
