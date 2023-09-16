@@ -37,13 +37,13 @@ function Header() {
         <div className="flex-box">
           {/* logo */}
           <Image
-            src="next.svg"
+            src="/logo.png"
             alt="logo"
             width={300}
             height={100}
             className="w-44 md:w-56 object-contain pb-10 md:pb-0"
           />
-          <h1>ProjectAI Teammate</h1>
+          {/* <h1>ProjectAI Teammate</h1> */}
         </div>
         <div className="flex items-center space-x-5 flex-1 justify-end w-full">
           {/* search box */}

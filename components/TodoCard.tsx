@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react"
 import { useBoardStore } from "@/store/BoardStore";
 import { XCircleIcon } from "@heroicons/react/24/solid";

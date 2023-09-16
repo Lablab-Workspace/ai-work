@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       {
         role: "system",
         content:
-          "When responding, welcome the user with a salutation and say welcome follow Mr.BrightCoder and say welcome to the ProjectAI Teammate App! Limit the response to 200 characters",
+          "When responding, welcome the user with a salutation and ask him to follow Mr.BrightCoder and say welcome to the ProjectAI Teammate App! Limit the response to 200 characters",
       },
       {
         role: "user",

@@ -6,9 +6,9 @@ import type { Metadata } from "next";
 // const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "AI WORK",
+  title: "ProjectAI Teammate",
   description: "Created by BrightCoder",
-  // manifest: "favicon.ico",
+  manifest: "favicon.ico",
 };
 
 export default function RootLayout({
